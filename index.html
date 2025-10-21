@@ -1,127 +1,739 @@
 <!DOCTYPE html>
+<!--designed by vito nkls  ·  vitonkls.com-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="newfavicon.png">
-    <title>doctorlegacy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    <meta name="description" content="placeholder">
+    <meta name="keywords" content="3D artist, 3D modeling, character modeling, VRChat models, 3D commissions, Blender artist, 3D animation, doctorlegacy, doctor legacy, doctor legacy youtube">
+    <meta name="author" content="doctorlegacy">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F6F6F6">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://doctorlegacy.me/">
+    <meta property="og:title" content="doctorlegacy · 3D Artist">
+    <meta property="og:description" content="placeholder">
+    <meta property="og:image" content="placeholder">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doctorlegacy.me/">
+    <meta property="twitter:title" content="doctorlegacy · 3D Artist">
+    <meta property="twitter:description" content="placeholder">
+    <meta property="twitter:image" content="placeholder">
+    
+    <link rel="canonical" href="https://doctorlegacy.me/">
+    
+    <title>doctorlegacy · 3D Artist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "doctorlegacy",
+      "jobTitle": "3D Artist",
+      "description": "placeholder",
+      "url": "https://doctorlegacy.me",
+      "sameAs": [
+        "https://www.youtube.com/@thedoctorlegacy",
+        "https://doctorlegacy.booth.pm/",
+        "https://discord.gg/vsnvrc"
+      ],
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "3D Character Modeling Commission",
+          "description": "Custom 3D character models for VRChat, games, and animation"
+        },
+        "price": "50",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "50",
+          "maxPrice": "800",
+          "priceCurrency": "USD"
         }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-size: 24px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .character-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 125px;
-            max-width: 900px;
-        }
-        .character-card {
-            position: relative;
-            right: 100px;
-            width: 200%;
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .character-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: blur(1.25px);
-            transition: filter 0.3s ease;
-        }
-        .character-card:hover .character-image {
-            filter: blur(0);
-        }
-        .character-info {
-            position: absolute;
-            bottom: 0px;
-            left: 50px;
-            width: 100%;
-            padding: 0px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        .character-card:hover .character-info {
-            transform: translateY(0);
-        }
-        .character-name {
-            font-weight: medium;
-            margin: 0;
-        }
-        .character-description {
-            font-size: 14px;
-            margin: 5px 0 0;
-        }
-    </style>
+      }
+    }
+    </script>
 </head>
 <body>
-    <h1></h1>
-    <br />
-    <img src="assets/images/VSNbnw.png" alt="logo" width="128">
-    <br />
-    <br />
-    <br />
-    <div class="character-grid">
-        <div class="character-card">
-            <img src="assets/images/Byakuya.png" alt="Character 1" class="character-image">
-            <div class="character-info">
-                <p class="character-name">Byakuya Togami</p>
-                <p class="character-description">MODEL</p>
+    <header role="banner">
+        <div class="left-section">
+            <div class="profile-container" role="button" aria-label="Toggle eye mode" tabindex="0">
+                <img src="assets/icons/BALL.svg" alt="Eye pupil" class="cursor-eye-ball" id="cursor-eye-ball">
+                <img src="assets/icons/WITHEYE.svg" alt="doctorlegacy profile icon" class="profile-pic" id="profile-pic">
+            </div>
+            <div class="text-content">
+                <h1>doctorlegacy</h1>
+                <h2>3D Artist</h2>
             </div>
         </div>
-        <div class="character-card">
-            <img src="assets/images/Maki.png" alt="Character 2" class="character-image">
-            <div class="character-info">
-                <p class="character-name">Maki Harukawa</p>
-                <p class="character-description">MODEL</p>
-            </div>
+        <nav class="social-icons" aria-label="Social media links">
+            <a href="https://discord.gg/vsnvrc" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Join VSN Discord server">
+                <img src="assets/icons/discord.svg" alt="Discord icon" width="24" height="24">
+                <span>VSN Discord</span>
+            </a>
+            <a href="https://www.youtube.com/@thedoctorlegacy" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit YouTube channel">
+                <img src="assets/icons/youtube.svg" alt="YouTube icon" width="27" height="27">
+                <span>YouTube</span>
+            </a>
+            <a href="https://doctorlegacy.booth.pm/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit BOOTH store">
+                <img src="assets/icons/booth.svg" alt="BOOTH icon" width="21" height="21">
+                <span>BOOTH Store</span>
+            </a>
+        </nav>
+    </header>
+    
+    <section class="carousel-container" id="carousel-section" aria-label="Portfolio gallery">
+        <div class="carousel" role="list">
+            <img src="assets/carousel/GradBear_Side.webp" alt="" data-model-name="Graduation Bear" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Kasai_Side.webp" alt="" data-model-name="Kasai" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Miwa_Side.webp" alt="" data-model-name="Miwa" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Kokomi_VSN_Side.webp" alt="" data-model-name="Kokomi" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Kazuha_Side.webp" alt="" data-model-name="Kazuha" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Candace_Side.webp" alt="" data-model-name="Candace" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Byakya_Side.webp" alt="" data-model-name="Byakya" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Hajime_Side.webp" alt="" data-model-name="Hajime" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Sayaka_Side.webp" alt="" data-model-name="Sayaka" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Maki_Side.webp" alt="" data-model-name="Maki" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Sonia_Side.webp" alt="" data-model-name="Sonia" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Ibuki_Side.webp" alt="" data-model-name="Ibuki" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/GradBear_Side.webp" alt="" data-model-name="Graduation Bear" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Kasai_Side.webp" alt="" data-model-name="Kasai" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Miwa_Side.webp" alt="" data-model-name="Miwa" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Kokomi_VSN_Side.webp" alt="" data-model-name="Kokomi" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Kazuha_Side.webp" alt="" data-model-name="Kazuha" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Candace_Side.webp" alt="" data-model-name="Candace" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Byakya_Side.webp" alt="" data-model-name="Byakya" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Hajime_Side.webp" alt="" data-model-name="Hajime" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Sayaka_Side.webp" alt="" data-model-name="Sayaka" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Maki_Side.webp" alt="" data-model-name="Maki" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Sonia_Side.webp" alt="" data-model-name="Sonia" width="245" height="464" loading="lazy">
+            <img src="assets/carousel/Ibuki_Side.webp" alt="" data-model-name="Ibuki" width="245" height="464" loading="lazy">
         </div>
-        <div class="character-card">
-            <img src="assets/images/Gundham.png" alt="Character 3" class="character-image">
-            <div class="character-info">
-                <p class="character-name">Gundham Tanaka</p>
-                <p class="character-description">MODEL</p>
+    </section>
+    
+    <div class="buttons-wrapper">
+        <div class="buttons-container">
+            <div class="left-buttons">
+                <button class="theme-toggle-button" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button">
+                    <img class="theme-icon" src="assets/icons/light.svg" alt="Light mode icon" width="22" height="22">
+                </button>
+                <button class="button show-models" aria-label="Navigate to timelapses section" type="button">
+                    <img src="assets/icons/arrow.svg" alt="Arrow icon" width="16" height="16" class="arrow-icon">
+                    Watch timelapses
+                </button>
             </div>
-        </div>
-        <div class="character-card">
-            <img src="assets/images/newCandace.png" alt="Character 4" class="character-image">
-            <div class="character-info">
-                <p class="character-name">VSN Candace</p>
-                <p class="character-description">OUTFIT</p>
+            <div class="model-name-container">
+                <div class="model-name-text"></div>
             </div>
+            <div class="spacer"></div>
         </div>
-        <div class="character-card">
-            <img src="assets/images/Virtue.png" alt="Character 5" class="character-image">
-            <div class="character-info">
-                <p class="character-name">Vermillion Virtue</p>
-                <p class="character-description">OUTFITS</p>
-            </div>
-        </div>
-        <div class="character-card">
-            <img src="assets/images/VSNKaz.png" alt="Character 6" class="character-image">
-            <div class="character-info">
-                <p class="character-name">VSN Kazuha</p>
-                <p class="character-description">OUTFIT</p>
+
+        <div class="commission-system">
+            <div class="button commissions" id="commission-info-button" aria-expanded="false">
+                <span class="button-label">Order your commission</span>
+                <div class="commission-content" aria-hidden="true">
+                    <div class="panel-body">
+                        <p class="guarantee-text">
+                            <span class="guarantee-medium">Guarantee a high-quality model, </span><span class="guarantee-bold">every time.</span>
+                        </p>
+                        <div class="commission-image-container">
+                            <img src="assets/commissions.webp" alt="Example of commissioned 3D model work" class="commission-image" width="550" height="auto" loading="lazy">
+                        </div>
+                        <p class="pricing-main">
+                            <span class="price-starting">Starting from</span>
+                            <span class="price-dollar">$</span>
+                            <span class="price-amount">50</span>
+                            <span class="price-currency">USD</span>
+                        </p>
+                        <p class="pricing-description">Final pricing varies depending on what you need.<br>A full model from scratch can range from <span class="pricing-semibold">$ 200 to $ 800+ USD</span>.</p>
+                        <div class="cta-row">
+                            <p class="policy-text">NO NSFW   ·   PayPal only<br>Partial refunds  ·  50/50 payment</p>
+                            <button class="button cta-primary" id="contact-discord" type="button">
+                                <img src="assets/icons/discord.svg" alt="" width="23" height="23" style="filter: brightness(0);">
+                                Contact me on Discord
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <br />
-    <a href="https://www.discord.gg/vsnvrc"> Discord </a>
+
+    <section class="video-section" id="video-section" aria-label="Video timelapses">
+        <div class="video-carousel-container">
+            <div class="video-carousel" id="videoCarousel" role="list">
+                
+                <article class="video-item" data-video-index="0" data-video-id="CxkmZmn_yCk" role="listitem">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumbnail_sonia.webp" alt="Sonia 3D modeling timelapse video thumbnail" width="560" height="315" loading="lazy">
+                        <div class="video-overlay">
+                            <img src="assets/icons/youtube.svg" alt="Play video" class="play-button">
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="video-item active" data-video-index="1" data-video-id="iY1Wuf4oY1M" role="listitem">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumbnail_ibuki.webp" alt="Ibuki 3D modeling timelapse video thumbnail" width="560" height="315" loading="lazy">
+                        <div class="video-overlay">
+                            <img src="assets/icons/youtube.svg" alt="Play video" class="play-button">
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="video-item" data-video-index="2" data-video-id="FQqR0hIktB0" role="listitem">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumbnail_kokomi.webp" alt="Kokomi 3D modeling timelapse video thumbnail" width="560" height="315" loading="lazy">
+                        <div class="video-overlay">
+                            <img src="assets/icons/youtube.svg" alt="Play video" class="play-button">
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="featuring-section-fixed" id="featuringSection">
+                <span class="featuring-text">Commentated timelapse featuring <img src="assets/feat-3.webp" alt="Ibuki character icon" class="featuring" id="featuringImg" width="20" height="20"> <span id="featuringText">Ibuki</span></span>
+            </div>
+        </div>
+    </section>
+
+    
+    <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
+        <button class="modal-close" onclick="closeVideoModal()" aria-label="Close video modal" type="button">&times;</button>
+        <div class="modal-content">
+            <div class="modal-video-container">
+                <iframe id="modalVideo" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube video player"></iframe>
+            </div>
+        </div>
+        <div class="modal-nav">
+            <div class="modal-featuring">
+                <span class="modal-featuring-text">Featuring <img id="modalFeaturingImg" src="" alt="Character icon" width="20" height="20"> <span id="modalFeaturingText"></span></span>
+                <span class="text-separator"> · </span>
+                <span class="modal-description" id="modalDescription">Description</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        const preloadEyeImages = [
+            'assets/icons/noeye.svg',
+            'assets/icons/noeye-dark.svg'
+        ];
+        
+        preloadEyeImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        
+        const preloadFeatImages = [
+            'assets/feat-1.webp',
+            'assets/feat-2.webp',
+            'assets/feat-3.webp'
+        ];
+        
+        preloadFeatImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        
+        const carouselModels = [
+            'GradBear', 'Kasai', 'Miwa', 'Kokomi_VSN', 'Kazuha', 
+            'Candace', 'Byakya', 'Hajime', 'Sayaka', 'Maki', 
+            'Sonia', 'Ibuki'
+        ];
+        
+        const preloadCarouselImages = [];
+        carouselModels.forEach(model => {
+            preloadCarouselImages.push(`assets/carousel/${model}_Side.webp`);
+            preloadCarouselImages.push(`assets/carousel/${model}_Front.webp`);
+        });
+        
+        preloadCarouselImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+        
+        setTimeout(function() {
+            const carousel = document.querySelector('.carousel');
+            const images = carousel.querySelectorAll('img');
+            const modelNameText = document.querySelector('.model-name-text');
+
+            
+            images.forEach(img => {
+                img.addEventListener('mouseenter', () => {
+                    
+                    img.src = img.src.replace('_Side', '_Front');
+                    
+                    const modelName = img.getAttribute('data-model-name') || img.alt.replace(' Side', '').replace(' Front', '');
+                    modelNameText.textContent = modelName;
+                    modelNameText.style.opacity = '1';
+                });
+
+                img.addEventListener('mouseleave', () => {
+                    
+                    img.src = img.src.replace('_Front', '_Side');
+                    
+                    modelNameText.style.opacity = '0';
+                });
+            });
+
+            
+            const socialIcons = document.querySelectorAll('.social-icon img');
+            
+            
+            if (socialIcons[0]) {
+                const discordLink = socialIcons[0].parentElement;
+                discordLink.onmouseenter = function() {
+                    socialIcons[0].src = 'assets/icons/discord-hover.svg';
+                    socialIcons[0].style.filter = 'none';
+                };
+                discordLink.onmouseleave = function() {
+                    socialIcons[0].src = 'assets/icons/discord.svg';
+                    socialIcons[0].style.filter = '';
+                };
+            }
+            
+            
+            if (socialIcons[2]) {
+                const boothLink = socialIcons[2].parentElement;
+                boothLink.onmouseenter = function() {
+                    socialIcons[2].src = 'assets/icons/booth-hover.svg';
+                    socialIcons[2].style.filter = 'none';
+                };
+                boothLink.onmouseleave = function() {
+                    socialIcons[2].src = 'assets/icons/booth.svg';
+                    socialIcons[2].style.filter = '';
+                };
+            }
+        }, 100);
+
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.querySelector('.theme-icon');
+            const profilePic = document.getElementById('profile-pic');
+            const cursorEyeBall = document.getElementById('cursor-eye-ball');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (profilePic && profilePic.classList.contains('noeye-mode')) {
+                
+                profilePic.style.transition = 'none';
+                cursorEyeBall.style.transition = 'none';
+                
+                profilePic.classList.remove('noeye-mode');
+                profilePic.src = 'assets/icons/WITHEYE.svg';
+                cursorEyeBall.classList.remove('active');
+                isEyeMode = false;
+                
+                
+                document.removeEventListener('mousemove', updateEyePosition);
+                
+                
+                profilePic.offsetHeight;
+                cursorEyeBall.offsetHeight;
+                profilePic.style.transition = 'filter 0.25s ease-in, transform 0.15s ease';
+                cursorEyeBall.style.transition = 'none';
+            }
+            
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.src = 'assets/icons/dark-mode-2.svg';
+                themeIcon.width = 22;
+                themeIcon.height = 22;
+                themeIcon.alt = 'Dark Mode';
+            } else {
+                themeIcon.src = 'assets/icons/light.svg';
+                themeIcon.width = 22;
+                themeIcon.height = 22;
+                themeIcon.alt = 'Light Mode';
+            }
+        }
+
+        
+        const header = document.querySelector('header');
+        let lastScrollTop = 0;
+        
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScrollTop = scrollTop;
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        
+        handleScroll();
+
+        (function() {
+            const btn = document.getElementById('commission-info-button');
+            const content = btn?.querySelector('.commission-content');
+            const contactBtn = document.getElementById('contact-discord');
+
+            function open() {
+                btn.classList.add('expanded');
+                btn.setAttribute('aria-expanded', 'true');
+                if (content) content.setAttribute('aria-hidden', 'false');
+            }
+
+            function close() {
+                btn.classList.remove('expanded');
+                btn.setAttribute('aria-expanded', 'false');
+                if (content) content.setAttribute('aria-hidden', 'true');
+            }
+
+            btn?.addEventListener('click', (e) => {
+                const isExpanded = btn.classList.contains('expanded');
+                if (isExpanded) {
+                    if (content && content.contains(e.target)) return; // keep open when interacting inside
+                    close();
+                } else {
+                    open();
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!btn?.contains(e.target) && btn?.classList.contains('expanded')) {
+                    close();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') close();
+            });
+
+            contactBtn?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                window.open('https://discord.gg/vsnvrc', '_blank');
+            });
+        })();
+
+        const watchTimelapsesBtn = document.querySelector('.show-models');
+        const videoSection = document.getElementById('video-section');
+        let isShowingVideos = false;
+        
+        watchTimelapsesBtn?.addEventListener('click', () => {
+            if (!isShowingVideos) {
+                if (videoSection) {
+                    const elementPosition = videoSection.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - 75; // adjust dis value to control scrolling from top
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+                watchTimelapsesBtn.innerHTML = `
+                    <img src="assets/icons/arrow.svg" alt="Arrow" width="16" height="16" class="arrow-icon flipped">
+                    Go back to models
+                `;
+                isShowingVideos = true;
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                watchTimelapsesBtn.innerHTML = `
+                    <img src="assets/icons/arrow.svg" alt="Arrow" width="16" height="16" class="arrow-icon">
+                    Watch timelapses
+                `;
+                isShowingVideos = false;
+            }
+        });
+
+        let isEyeMode = false;
+        let updateEyePosition;
+        
+        (function() {
+            const profileContainer = document.querySelector('.profile-container');
+            const profilePic = document.getElementById('profile-pic');
+            const cursorEyeBall = document.getElementById('cursor-eye-ball');
+
+            
+            updateEyePosition = function(e) {
+                if (cursorEyeBall && isEyeMode && profileContainer) {
+                    const rect = profileContainer.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    const mouseX = e.clientX - centerX;
+                    const mouseY = e.clientY - centerY;
+                    
+                    const maxMovement = 11;
+                    const sensitivity = 0.12;
+                    
+                    const constrainedX = Math.max(-maxMovement, 
+                        Math.min(maxMovement, mouseX * sensitivity));
+                    const constrainedY = Math.max(-maxMovement, 
+                        Math.min(maxMovement, mouseY * sensitivity));
+                    
+                    const leftPercent = 50 + (constrainedX / rect.width * 100);
+                    const topPercent = 50 + (constrainedY / rect.height * 100);
+                    
+                    cursorEyeBall.style.left = leftPercent + '%';
+                    cursorEyeBall.style.top = topPercent + '%';
+                }
+            };
+
+            profileContainer?.addEventListener('click', function() {
+                if (header.classList.contains('scrolled')) {
+                    return;
+                }
+                
+                profilePic.classList.add('click-animate');
+                setTimeout(() => {
+                    profilePic.classList.remove('click-animate');
+                }, 200);
+                
+                if (!isEyeMode) {
+                    profilePic.style.transition = 'none';
+                    cursorEyeBall.style.transition = 'none';
+                    
+                    profilePic.classList.add('noeye-mode');
+                    
+                    const isDarkMode = document.body.classList.contains('dark-mode');
+                    profilePic.src = isDarkMode ? 'assets/icons/noeye-dark.svg' : 'assets/icons/noeye.svg';
+                    
+                    profilePic.offsetHeight;
+                    
+                    requestAnimationFrame(() => {
+                        cursorEyeBall.classList.add('active');
+                        isEyeMode = true;
+                        
+                        profilePic.offsetHeight;
+                        cursorEyeBall.offsetHeight;
+                        profilePic.style.transition = 'transform 0.15s ease';
+                        cursorEyeBall.style.transition = 'none';
+                        
+                        document.addEventListener('mousemove', updateEyePosition);
+                        
+                        cursorEyeBall.style.left = '50%';
+                        cursorEyeBall.style.top = '50%';
+                    });
+                } else {
+                    profilePic.style.transition = 'none';
+                    cursorEyeBall.style.transition = 'none';
+                    
+                    profilePic.classList.remove('noeye-mode');
+                    profilePic.src = 'assets/icons/WITHEYE.svg';
+                    cursorEyeBall.classList.remove('active');
+                    isEyeMode = false;
+                    
+                    profilePic.offsetHeight;
+                    cursorEyeBall.offsetHeight;
+                    profilePic.style.transition = 'filter 0.25s ease-in, transform 0.15s ease';
+                    cursorEyeBall.style.transition = 'none';
+                    
+                    document.removeEventListener('mousemove', updateEyePosition);
+                }
+            });
+
+            window.addEventListener('beforeunload', function() {
+                document.removeEventListener('mousemove', updateEyePosition);
+            });
+        })();
+
+        const videos = [
+            {
+                id: 'CxkmZmn_yCk',
+                featImg: 'assets/feat-2.webp',
+                featText: 'Sonia',
+                description: 'Modeled, textured, rigged, and rendered from scratch in Blender.'
+            },
+            {
+                id: 'iY1Wuf4oY1M',
+                featImg: 'assets/feat-3.webp',
+                featText: 'Ibuki',
+                description: 'Modeled, textured, rigged, and rendered in Blender.'
+            },
+            {
+                id: 'FQqR0hIktB0',
+                featImg: 'assets/feat-1.webp',
+                featText: 'Kokomi',
+                description: 'Custom-made outfit modeled, textured, rigged, and rendered in Blender.'
+            }
+        ];
+
+        let currentVideoIndex = 0;
+
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('videoModal');
+
+            currentVideoIndex = videos.findIndex(video => video.id === videoId);
+            
+            loadVideoInModal(currentVideoIndex);
+            
+            document.body.style.overflow = 'hidden';
+            
+            requestAnimationFrame(() => {
+                modal.classList.add('show');
+            });
+        }
+
+        function loadVideoInModal(index) {
+            const video = videos[index];
+            const modalVideo = document.getElementById('modalVideo');
+            const modalFeaturingImg = document.getElementById('modalFeaturingImg');
+            const modalFeaturingText = document.getElementById('modalFeaturingText');
+            const modalDescription = document.getElementById('modalDescription');
+            
+            modalVideo.src = `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1&controls=1&iv_load_policy=3&playsinline=1&enablejsapi=1`;
+            
+            modalFeaturingImg.src = video.featImg;
+            modalFeaturingText.textContent = video.featText;
+            modalDescription.textContent = video.description;
+        }
+
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            
+            modal.classList.remove('show');
+            
+            setTimeout(() => {
+                modalVideo.src = '';
+                
+                document.body.style.overflow = 'auto';
+
+                const modalVideoContainer = document.querySelector('.modal-video-container');
+                modalVideoContainer.classList.remove('slide-out-left', 'slide-in-right', 'slide-in-center');
+            }, 300);
+        }
+
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideoModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+
+        let carouselCurrentIndex = 1;
+        const carousel = document.getElementById('videoCarousel');
+        const videoItems = document.querySelectorAll('.video-item');
+        const totalVideos = 3;
+        let isTransitioning = false;
+
+        function initCarousel() {
+            updateCarouselPosition(false);
+        }
+
+        function updateCarouselPosition(animate = true) {
+            const videoItem = videoItems[0];
+            const videoWidth = videoItem.offsetWidth;
+            const gap = 48;
+            const containerWidth = document.querySelector('.video-carousel-container').offsetWidth;
+            const offset = (containerWidth / 2) - (videoWidth / 2);
+            
+            const translateX = offset - (carouselCurrentIndex * (videoWidth + gap));
+            
+            if (!animate) {
+                carousel.style.transition = 'none';
+            } else {
+                carousel.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+            }
+            
+            carousel.style.transform = `translateX(${translateX}px)`;
+            
+            videoItems.forEach((item, index) => {
+                const videoIndex = parseInt(item.dataset.videoIndex);
+                
+                if (videoIndex === carouselCurrentIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            const video = videos[carouselCurrentIndex];
+            const featuringImg = document.getElementById('featuringImg');
+            const featuringText = document.getElementById('featuringText');
+            
+            if (featuringImg && featuringText) {
+                const featuringSection = document.getElementById('featuringSection');
+                featuringSection.style.opacity = '0';
+                
+                setTimeout(() => {
+                    featuringImg.src = video.featImg;
+                    featuringText.textContent = video.featText;
+                    featuringSection.style.opacity = '1';
+                }, 150);
+            }
+        }
+
+        function navigateCarousel(direction) {
+            if (isTransitioning) return;
+            
+            const newIndex = carouselCurrentIndex + direction;
+            
+            if (newIndex < 0 || newIndex >= totalVideos) {
+                return;
+            }
+            
+            carouselCurrentIndex = newIndex;
+            updateCarouselPosition(true);
+        }
+
+        videoItems.forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                if (isTransitioning) return;
+                
+                const clickedVideoIndex = parseInt(item.dataset.videoIndex);
+                const currentActive = document.querySelector('.video-item.active');
+                const currentActiveIndex = parseInt(currentActive.dataset.videoIndex);
+                
+                if (item.classList.contains('active')) {
+                    const videoId = item.dataset.videoId;
+                    openVideoModal(videoId);
+                    return;
+                }
+                
+                const itemRect = item.getBoundingClientRect();
+                const containerRect = document.querySelector('.video-carousel-container').getBoundingClientRect();
+                const containerCenter = containerRect.left + containerRect.width / 2;
+                const itemCenter = itemRect.left + itemRect.width / 2;
+                
+                if (itemCenter < containerCenter) {
+                    navigateCarousel(-1);
+                } else {
+                    navigateCarousel(1);
+                }
+            });
+        });
+
+        initCarousel();
+
+        window.addEventListener('resize', () => {
+            updateCarouselPosition(false);
+        });
+    </script>
 </body>
 </html>

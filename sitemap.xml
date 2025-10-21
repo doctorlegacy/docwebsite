@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Page -->
+  <url>
+    <loc>https://doctorlegacy.me/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Portfolio Images -->
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/GradBear_Front.webp</image:loc>
+      <image:title>Graduation Bear 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Kasai_Front.webp</image:loc>
+      <image:title>Kasai 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Miwa_Front.webp</image:loc>
+      <image:title>Miwa 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Kokomi_VSN_Front.webp</image:loc>
+      <image:title>Kokomi 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Kazuha_Front.webp</image:loc>
+      <image:title>Kazuha 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Candace_Front.webp</image:loc>
+      <image:title>Candace 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Byakya_Front.webp</image:loc>
+      <image:title>Byakya 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Hajime_Front.webp</image:loc>
+      <image:title>Hajime 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Sayaka_Front.webp</image:loc>
+      <image:title>Sayaka 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Maki_Front.webp</image:loc>
+      <image:title>Maki 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Sonia_Front.webp</image:loc>
+      <image:title>Sonia 3D Model</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://doctorlegacy.me/assets/carousel/Ibuki_Front.webp</image:loc>
+      <image:title>Ibuki 3D Model</image:title>
+    </image:image>
+  </url>
+  
+</urlset>
+
