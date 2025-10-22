@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://doctorlegacy.me/sitemap.xml
+Sitemap: https://doctorlegacy.org/sitemap.xml
 
 # Crawl-delay to be respectful to server resources
 Crawl-delay: 1
