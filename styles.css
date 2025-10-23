@@ -317,8 +317,13 @@ body.dark-mode header.scrolled .social-icons {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    margin: -5px 0 36px 0;
-    padding-top: 170px;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: filter 0.25s ease;
 }
 
@@ -389,11 +394,12 @@ body.dark-mode header.scrolled .social-icons {
 
 .buttons-wrapper {
     position: fixed;
-    top: 630px;
+    bottom: 40px;
     left: 60px;
     right: 60px;
     overflow: visible;
     z-index: 100;
+    max-width: calc(100vw - 120px);
 }
 
 .buttons-container {
@@ -403,6 +409,8 @@ body.dark-mode header.scrolled .social-icons {
     position: relative;
     overflow: visible;
     z-index: 1;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
 .commissions-wrapper {
@@ -415,10 +423,14 @@ body.dark-mode header.scrolled .social-icons {
     display: flex;
     gap: 16px;
     align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 .spacer {
     width: 250px;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 .right-buttons {
@@ -644,7 +656,10 @@ body.dark-mode .commissions {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: fit-content;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -681,6 +696,8 @@ body.dark-mode .arrow-icon {
     -ms-user-select: none;
     width: 50px;
     height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -688,6 +705,7 @@ body.dark-mode .arrow-icon {
     transition: background-color 0.25s ease-in;
     padding: 0;
     border: none;
+    flex-shrink: 0;
 }
 
 .theme-toggle-button:focus {
@@ -709,9 +727,10 @@ body.dark-mode .carousel img:hover {
 } 
 
 .video-section {
-    margin: 110px 0 0 0;
+    margin: 0;
     padding: 60px 0 136px 0;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 .video-carousel-container {
@@ -1139,6 +1158,7 @@ body.dark-mode .modal-content {
     z-index: 1001;
     display: flex;
     align-items: flex-end;
+    max-width: 100%;
 }
 
 .commission-system .commissions {
@@ -1455,25 +1475,158 @@ body.dark-mode .cta-secondary {
     color: #FFFFFF; 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
+    .buttons-wrapper {
+        left: 50px;
+        right: 50px;
+        max-width: calc(100vw - 100px);
+    }
+    
+    .carousel-container {
+        min-height: 100vh;
+    }
+    
+    .carousel img {
+        width: 200px;
+        height: 378px;
+    }
+    
+    .carousel {
+        width: calc(200px * 24);
+    }
+    
+    @keyframes scroll {
+        0% { transform: translateX(80px); }
+        100% { transform: translateX(calc(80px - (200px * 12))); }
+    }
+}
+
+@media (max-width: 900px) {
     .buttons-wrapper {
         left: 40px;
         right: 40px;
+        bottom: 30px;
+        max-width: calc(100vw - 80px);
+    }
+    
+    .commission-system .commissions {
+        width: 200px;
     }
     
     .commission-system .commissions.expanded {
-        width: 666px;
-        height: 546px;
+        width: min(600px, calc(100vw - 80px));
+        max-width: calc(100vw - 80px);
+    }
+    
+    .spacer {
+        width: 100px;
+    }
+    
+    .carousel-container {
+        min-height: 100vh;
+    }
+    
+    .carousel img {
+        width: 180px;
+        height: 340px;
+    }
+    
+    .carousel {
+        width: calc(180px * 24);
+        transform: translateX(60px);
+    }
+    
+    @keyframes scroll {
+        0% { transform: translateX(60px); }
+        100% { transform: translateX(calc(60px - (180px * 12))); }
+    }
+    
+    .commission-image {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .buttons-wrapper {
+        left: 30px;
+        right: 30px;
+        bottom: 24px;
+        max-width: calc(100vw - 60px);
+    }
+    
+    .left-buttons {
+        gap: 12px;
+    }
+    
+    .show-models {
+        font-size: 14px;
+        padding: 14px 16px;
+    }
+    
+    .commission-system .commissions {
+        width: 180px;
+        font-size: 14px;
+    }
+    
+    .commission-system .commissions.expanded {
+        width: calc(100vw - 60px);
+        max-width: calc(100vw - 60px);
+        height: auto;
+        min-height: 500px;
     }
     
     .commission-system .commissions .commission-content {
         width: calc(100% + 2px);
         height: calc(100% + 2px);
     }
-    .panel-body { border-radius: 18px; }
+    
+    .panel-body { 
+        border-radius: 18px; 
+    }
     
     .spacer {
-        width: 250px;
+        width: 50px;
+    }
+    
+    .cta-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .policy-text {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .cta-primary {
+        margin-right: 0;
+        width: 100%;
+    }
+    
+    .carousel-container {
+        min-height: 100vh;
+    }
+    
+    .carousel img {
+        width: 160px;
+        height: 302px;
+        border-radius: 8px;
+    }
+    
+    .carousel img:hover {
+        border-radius: 40px;
+    }
+    
+    .carousel {
+        width: calc(160px * 24);
+        transform: translateX(50px);
+    }
+    
+    @keyframes scroll {
+        0% { transform: translateX(50px); }
+        100% { transform: translateX(calc(50px - (160px * 12))); }
     }
 }
 
@@ -1481,19 +1634,169 @@ body.dark-mode .cta-secondary {
     .buttons-wrapper {
         left: 20px;
         right: 20px;
+        bottom: 20px;
+        max-width: calc(100vw - 40px);
+    }
+    
+    .buttons-container {
+        gap: 8px;
+    }
+    
+    .left-buttons {
+        gap: 8px;
+    }
+    
+    .show-models {
+        font-size: 13px;
+        padding: 12px 14px;
+        gap: 6px;
+    }
+    
+    .theme-toggle-button {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .commission-system .commissions {
+        width: 160px;
+        font-size: 13px;
+        padding: 14px 16px;
     }
     
     .commission-system .commissions.expanded {
         width: calc(100vw - 40px);
-        height: 546px;
+        max-width: calc(100vw - 40px);
+        height: auto;
+        min-height: 480px;
+        padding: 20px 16px;
     }
     
     .commission-system .commissions .commission-content {
         width: calc(100% + 2px);
         height: calc(100% + 2px);
+        padding: 20px 16px;
     }
     
     .spacer {
-        width: 150px;
+        width: 20px;
+        min-width: 20px;
+    }
+    
+    .guarantee-text {
+        font-size: 18px;
+    }
+    
+    .price-starting {
+        font-size: 32px;
+    }
+    
+    .price-dollar {
+        font-size: 32px;
+    }
+    
+    .price-amount {
+        font-size: 52px;
+    }
+    
+    .price-currency {
+        font-size: 32px;
+    }
+    
+    .carousel-container {
+        min-height: 100vh;
+    }
+    
+    .carousel img {
+        width: 140px;
+        height: 265px;
+    }
+    
+    .carousel {
+        width: calc(140px * 24);
+        transform: translateX(40px);
+    }
+    
+    @keyframes scroll {
+        0% { transform: translateX(40px); }
+        100% { transform: translateX(calc(40px - (140px * 12))); }
+    }
+}
+
+@media (max-width: 480px) {
+    .buttons-wrapper {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: calc(100vw - 32px);
+    }
+    
+    .show-models {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+    
+    .theme-toggle-button {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    .commission-system .commissions {
+        width: 140px;
+        font-size: 12px;
+        padding: 12px 14px;
+        height: 44px;
+    }
+    
+    .commission-system .commissions.expanded {
+        width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
+        padding: 16px 12px;
+    }
+    
+    .spacer {
+        display: none;
+    }
+    
+    .guarantee-text {
+        font-size: 16px;
+    }
+    
+    .price-starting {
+        font-size: 28px;
+    }
+    
+    .price-dollar {
+        font-size: 28px;
+    }
+    
+    .price-amount {
+        font-size: 44px;
+    }
+    
+    .price-currency {
+        font-size: 28px;
+    }
+    
+    .carousel-container {
+        min-height: 100vh;
+    }
+    
+    .carousel img {
+        width: 120px;
+        height: 227px;
+    }
+    
+    .carousel {
+        width: calc(120px * 24);
+        transform: translateX(30px);
+    }
+    
+    @keyframes scroll {
+        0% { transform: translateX(30px); }
+        100% { transform: translateX(calc(30px - (120px * 12))); }
     }
 }
