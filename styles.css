@@ -728,20 +728,24 @@ body.dark-mode .carousel img:hover {
 
 .video-section {
     margin: 0;
-    padding: 60px 0 136px 0;
+    padding: 0;
     overflow-x: hidden;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .video-carousel-container {
     overflow: visible;
     width: 100%;
+    max-width: 100vw;
     position: relative;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    padding-bottom: 80px;
+    padding: 80px 0 140px 0;
     pointer-events: none;
 }
 
@@ -751,6 +755,8 @@ body.dark-mode .carousel img:hover {
     will-change: transform;
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     overflow: visible;
+    align-items: center;
+    position: relative;
 }
 
 .video-item {
@@ -761,6 +767,8 @@ body.dark-mode .carousel img:hover {
     position: relative;
     flex-shrink: 0;
     width: 666px;
+    min-width: 666px;
+    max-width: 666px;
     cursor: pointer;
     transition: transform 0.3s ease;
     opacity: 1;
@@ -791,6 +799,7 @@ body.dark-mode .carousel img:hover {
 .video-item iframe,
 .video-item .video-thumbnail > img {
     width: 100%;
+    max-width: 100%;
     aspect-ratio: 16 / 9;
     height: auto;
     border: 0;
@@ -801,17 +810,6 @@ body.dark-mode .carousel img:hover {
     object-fit: cover;
 }
 
-@media (max-width: 1000px) {
-    .video-item {
-        width: calc(100vw - 120px);
-    }
-}
-
-@media (max-width: 800px) {
-    .video-item {
-        width: calc(100vw - 80px);
-    }
-}
 
 body.dark-mode .video-thumbnail {
     border-color: #262626;
@@ -822,7 +820,7 @@ body.dark-mode .video-thumbnail {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0px;
+    bottom: 20px;
     z-index: 10;
     white-space: nowrap;
     display: flex;
@@ -900,6 +898,9 @@ body.dark-mode .description-text {
     border: 12px solid #FFFFFF;
     border-radius: 24px;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+    width: 666px;
+    max-width: 666px;
+    box-sizing: border-box;
 }
 
 .video-overlay {
@@ -959,8 +960,8 @@ body.dark-mode .description-text {
 }
 
 .modal-content {
-    width: 75vw;
-    max-width: 1000px;
+    width: 1000px;
+    max-width: 90vw;
     max-height: 90vh;
     background: transparent;
     border-radius: 12px;
@@ -1127,10 +1128,6 @@ body.dark-mode .modal-content {
 }
 
 @media (max-width: 768px) {
-    .modal-content {
-        width: 90vw;
-    }
-    
     .modal-nav {
         flex-direction: column;
         gap: 15px;
