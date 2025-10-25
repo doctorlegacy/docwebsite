@@ -226,7 +226,7 @@ header.scrolled .text-content {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 18px;
+    padding: 16px 20px;
     color: #9D9D9D;
     font-family: 'Instrument Sans', sans-serif;
     font-weight: 600;
@@ -234,6 +234,9 @@ header.scrolled .text-content {
     letter-spacing: -0.02em;
     cursor: pointer;
     text-decoration: none;
+    border-radius: 100px;
+    height: 48px;
+    box-sizing: border-box;
     transition: gap 0.35s cubic-bezier(0.22, 1, 0.36, 1), padding 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -273,7 +276,7 @@ header.scrolled .text-content h2 {
 
 header.scrolled .social-icon {
     gap: 0px;
-    padding: 14px;
+    padding: 14px 16px;
 }
 
 header.scrolled .social-icon span {
@@ -615,7 +618,7 @@ body.dark-mode .social-icon {
 .social-icon:focus {
     outline: 2px solid #5865F2;
     outline-offset: 2px;
-    border-radius: 8px;
+    border-radius: 50px;
 }
 
 body.dark-mode .commissions {
@@ -699,8 +702,7 @@ body.dark-mode .theme-toggle-button {
 
 body.dark-mode .model-name-text {
     color: #FFFFFF;
-    background-color: rgba(82, 82, 82, 0.95);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(26, 26, 26, 0.98);
 }
 
 body.dark-mode .carousel img:hover {
@@ -726,7 +728,7 @@ body.dark-mode .carousel img:hover {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    padding: 80px 0 140px 0;
+    padding: 0px 0 50px 0;
     pointer-events: none;
 }
 
@@ -801,7 +803,7 @@ body.dark-mode .video-thumbnail {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 20px;
+    bottom: -20px;
     z-index: 10;
     white-space: nowrap;
     display: flex;
@@ -1427,6 +1429,13 @@ body.dark-mode .modal-content {
     height: 53px;
     flex-shrink: 0;
     box-sizing: border-box;
+    transition: transform 0.25s ease;
+}
+
+.cta-primary:hover {
+    transform: scale(1.04);
+    outline: 2px solid white;
+    outline-offset: 3px;
 }
 
 .cta-secondary {

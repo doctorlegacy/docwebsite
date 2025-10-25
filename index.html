@@ -15,12 +15,17 @@
     <meta property="og:title" content="doctorlegacy · 3D Artist">
     <meta property="og:description" content="Hello patients, it's doctorlegacy! I'm a 3D artist with 4+ years of experience making 3D avatars. I might be a miracle worker...">
     <meta property="og:image" content="https://doctorlegacy.org/assets/commissions.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="">
+    <meta property="og:site_name" content="doctorlegacy">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://doctorlegacy.org/">
     <meta property="twitter:title" content="doctorlegacy · 3D Artist">
     <meta property="twitter:description" content="Hello patients, it's doctorlegacy! I'm a 3D artist with 4+ years of experience making 3D avatars. I might be a miracle worker...">
     <meta property="twitter:image" content="https://doctorlegacy.org/assets/commissions.webp">
+    <meta property="twitter:image:alt" content="">
     
     <link rel="canonical" href="https://doctorlegacy.org/">
     
@@ -85,15 +90,15 @@
         </div>
         <nav class="social-icons" aria-label="Social media links">
             <a href="https://discord.gg/vsnvrc" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Join VSN Discord server">
-                <img src="assets/icons/discord.svg" alt="Discord icon" width="24" height="24">
-                <span>VSN Discord</span>
+                <img src="assets/icons/discord.svg" alt="" width="24" height="24">
+                <span>vsn! Discord</span>
             </a>
             <a href="https://www.youtube.com/@thedoctorlegacy" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit YouTube channel">
-                <img src="assets/icons/youtube.svg" alt="YouTube icon" width="27" height="27">
+                <img src="assets/icons/youtube.svg" alt="" width="27" height="27">
                 <span>YouTube</span>
             </a>
             <a href="https://doctorlegacy.booth.pm/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit BOOTH store">
-                <img src="assets/icons/booth.svg" alt="BOOTH icon" width="21" height="21">
+                <img src="assets/icons/booth.svg" alt="" width="21" height="21">
                 <span>BOOTH Store</span>
             </a>
         </nav>
@@ -450,15 +455,10 @@
         
         watchTimelapsesBtn?.addEventListener('click', () => {
             if (!isShowingVideos) {
-                if (videoSection) {
-                    const elementPosition = videoSection.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = elementPosition - 75; // adjust dis value to control scrolling from top
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: 'smooth'
+                });
                 watchTimelapsesBtn.innerHTML = `
                     <img src="assets/icons/arrow.svg" alt="Arrow" width="16" height="16" class="arrow-icon flipped">
                     Go back to models
