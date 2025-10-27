@@ -512,6 +512,11 @@
             };
 
             profileContainer?.addEventListener('click', function() {
+                
+                if (window.innerWidth <= 600) {
+                    return;
+                }
+                
                 if (header.classList.contains('scrolled')) {
                     return;
                 }
