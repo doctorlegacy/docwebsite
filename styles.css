@@ -1712,16 +1712,46 @@ body.dark-mode .cta-secondary {
 }
 
 @media (max-width: 480px) {
+    header {
+        padding: 20px 20px 16px 20px;
+    }
+    
+    /* Stack header text vertically */
+    .text-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+    }
+    
+    .text-content h1 {
+        font-size: 24px;
+    }
+    
+    .text-content h2 {
+        font-size: 18px;
+    }
+    
+    /* Hide text in watch timelapses button, show only arrow */
+    .show-models {
+        font-size: 0;
+        padding: 12px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 50%;
+        gap: 0;
+    }
+    
+    .show-models .arrow-icon {
+        margin: 0;
+    }
+    
     .buttons-wrapper {
         left: 16px;
         right: 16px;
         bottom: 16px;
         max-width: calc(100vw - 32px);
-    }
-    
-    .show-models {
-        font-size: 12px;
-        padding: 10px 12px;
     }
     
     .theme-toggle-button {
