@@ -1716,7 +1716,6 @@ body.dark-mode .cta-secondary {
         padding: 20px 20px 16px 20px;
     }
     
-    /* Stack header text vertically */
     .text-content {
         flex-direction: column;
         align-items: flex-start;
@@ -1731,41 +1730,67 @@ body.dark-mode .cta-secondary {
         font-size: 18px;
     }
     
-    /* Hide text in watch timelapses button, show only arrow */
     .show-models {
         font-size: 0;
-        padding: 12px;
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        min-height: 40px;
+        padding: 0;
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
         border-radius: 50%;
         gap: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
     }
     
     .show-models .arrow-icon {
         margin: 0;
+        width: 22px !important;
+        height: 22px !important;
     }
     
     .buttons-wrapper {
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
-        max-width: calc(100vw - 32px);
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: calc(100vw - 40px);
+    }
+    
+    .buttons-container {
+        gap: 12px;
+    }
+    
+    .left-buttons {
+        gap: 12px;
+        flex-shrink: 0;
     }
     
     .theme-toggle-button {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        min-height: 40px;
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+        flex-shrink: 0;
+    }
+    
+    .theme-icon {
+        width: 26px !important;
+        height: 26px !important;
     }
     
     .commission-system .commissions {
-        width: 140px;
-        font-size: 12px;
-        padding: 12px 14px;
-        height: 44px;
+        flex: 1;
+        width: auto;
+        font-size: 15px;
+        padding: 1px 102px;
+        height: 0px;
+        min-height: 60px;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .commission-system .commissions.expanded {
