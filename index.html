@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!---All models shown corresponds to Doctor Legacy.--->
+<!---all models shown were made/styled by doctorlegacy--->
 <!--designed by vito nkls  ·  vitonkls.com-->
 <html lang="en">
 <head>
@@ -416,17 +416,26 @@
             const btn = document.getElementById('commission-info-button');
             const content = btn?.querySelector('.commission-content');
             const contactBtn = document.getElementById('contact-discord');
+            const carousel = document.querySelector('.carousel');
 
             function open() {
                 btn.classList.add('expanded');
                 btn.setAttribute('aria-expanded', 'true');
                 if (content) content.setAttribute('aria-hidden', 'false');
+                
+                if (carousel) {
+                    carousel.style.animationPlayState = 'paused';
+                }
             }
 
             function close() {
                 btn.classList.remove('expanded');
                 btn.setAttribute('aria-expanded', 'false');
                 if (content) content.setAttribute('aria-hidden', 'true');
+                
+                if (carousel) {
+                    carousel.style.animationPlayState = 'running';
+                }
             }
 
             btn?.addEventListener('click', (e) => {
