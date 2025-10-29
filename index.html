@@ -757,8 +757,31 @@
         }
 
         videoItems.forEach((item, index) => {
+            const playButton = item.querySelector('.play-button');
+            
+            if (playButton) {
+                playButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (isTransitioning) return;
+                    
+                    const videoId = item.dataset.videoId;
+                    openVideoModal(videoId);
+                });
+            }
+            
             item.addEventListener('click', function(e) {
                 if (isTransitioning) return;
+                
+                if (e.target.classList.contains('play-button')) {
+                    return;
+                }
+                
+                
+                if (window.innerWidth <= 600) {
+                    const videoId = item.dataset.videoId;
+                    openVideoModal(videoId);
+                    return;
+                }
                 
                 const clickedVideoIndex = parseInt(item.dataset.videoIndex);
                 const currentActive = document.querySelector('.video-item.active');
