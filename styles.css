@@ -259,6 +259,7 @@ header.scrolled {
 header.scrolled .left-section {
     background-color: rgba(246, 246, 246, 0.98);
     transform: scale(0.75) translate3d(0, 29px, 0);
+    padding: 0px 18px 0px 0px;
 }
 
 header.scrolled .social-icons {
@@ -287,6 +288,7 @@ header.scrolled .social-icon span {
 body.dark-mode header.scrolled .left-section {
     background-color: rgba(26, 26, 26, 0.98);
     transform: scale(0.75) translate3d(0, 29px, 0);
+    padding: 0px 18px 0px 0px;
 }
 
 body.dark-mode header.scrolled .social-icons {
@@ -337,9 +339,6 @@ body.dark-mode header.scrolled .social-icons {
     transform: translateX(6.5vw);
 }
 
-.carousel:hover {
-    animation-play-state: paused;
-}
 
 .carousel img {
     flex-shrink: 0;
@@ -448,6 +447,7 @@ body.dark-mode header.scrolled .social-icons {
     text-align: center;
     cursor: pointer;
     font-family: 'Instrument Sans', sans-serif;
+    outline: none;
     font-weight: 600;
     font-size: 16px;
     letter-spacing: -0.02em;
@@ -603,9 +603,7 @@ body.dark-mode .social-icon {
 }
 
 .social-icon:focus {
-    outline: 2px solid #5865F2;
-    outline-offset: 2px;
-    border-radius: 50px;
+    outline: none;
 }
 
 body.dark-mode .commissions {
@@ -678,8 +676,7 @@ body.dark-mode .arrow-icon {
 }
 
 .theme-toggle-button:focus {
-    outline: 2px solid #5865F2;
-    outline-offset: 2px;
+    outline: none;
 }
 
 body.dark-mode .theme-toggle-button {
@@ -964,30 +961,30 @@ body.dark-mode .description-text {
     position: fixed;
     top: 20px;
     right: 20px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
     cursor: pointer;
     z-index: 10001;
     width: 40px;
     height: 40px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: 0.2s ease, transform 0.2s ease;
     border: none;
+    padding: 0;
+    background: transparent;
 }
 
-.modal-close:focus {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
+.modal-close img {
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
 }
 
 .modal-close:hover {
-    background: rgba(0, 0, 0, 0.9);
-    transform: scale(1.1);
+    transform: scale(1.0);
+}
+
+.modal-close:hover img {
+    transform: scale(1.0);
 }
 
 .modal-video-container {
@@ -1128,7 +1125,11 @@ body.dark-mode .modal-content {
         right: 15px;
         width: 35px;
         height: 35px;
-        font-size: 20px;
+    }
+    
+    .modal-close img {
+        width: 18px;
+        height: 18px;
     }
 }
 
