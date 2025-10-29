@@ -365,11 +365,6 @@ body.dark-mode header.scrolled .social-icons {
     100% { transform: translateX(calc(6.5vw - (16vw * 12))); }
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
 
 .model-name-container {
     position: absolute;
@@ -576,20 +571,12 @@ body.dark-mode header.scrolled .social-icons {
 body.dark-mode .commissions.expanded {
     background: linear-gradient(
         135deg, 
-        rgba(178, 34, 34, 0.9) 0%, 
-        rgba(197, 45, 57, 0.9) 15%,
-        rgba(214, 52, 71, 0.9) 30%,
-        rgba(227, 58, 79, 0.9) 40%,
-        rgba(214, 52, 71, 0.9) 50%,
-        rgba(227, 58, 79, 0.9) 60%,
-        rgba(214, 52, 71, 0.9) 70%,
-        rgba(197, 45, 57, 0.9) 85%,
-        rgba(178, 34, 34, 0.9) 100%
+        rgba(178, 34, 34, 0.95) 0%, 
+        rgba(197, 45, 57, 0.95) 50%,
+        rgba(214, 52, 71, 0.95) 100%
     );
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease-in-out infinite;
-    backdrop-filter: blur(40px) saturate(180%) contrast(90%) brightness(110%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%) contrast(90%) brightness(110%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: #FFFFFF;
     box-shadow: 
         0 12px 40px rgba(0,0,0,0.5), 
@@ -1201,20 +1188,12 @@ body.dark-mode .modal-content {
 .commission-system .commissions.expanded::after {
     background: linear-gradient(
         135deg, 
-        rgba(178, 34, 34, 0.9) 0%, 
-        rgba(197, 45, 57, 0.9) 15%,
-        rgba(214, 52, 71, 0.9) 30%,
-        rgba(227, 58, 79, 0.9) 40%,
-        rgba(214, 52, 71, 0.9) 50%,
-        rgba(227, 58, 79, 0.9) 60%,
-        rgba(214, 52, 71, 0.9) 70%,
-        rgba(197, 45, 57, 0.9) 85%,
-        rgba(178, 34, 34, 0.9) 100%
+        rgba(178, 34, 34, 0.95) 0%, 
+        rgba(197, 45, 57, 0.95) 50%,
+        rgba(214, 52, 71, 0.95) 100%
     );
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease-in-out infinite;
-    backdrop-filter: blur(40px) saturate(180%) contrast(90%) brightness(110%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%) contrast(90%) brightness(110%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 
         inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
         inset 0 -1px 0 0 rgba(0, 0, 0, 0.1),
