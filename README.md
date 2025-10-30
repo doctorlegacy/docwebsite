@@ -1,3 +1,2 @@
-this is my awesome website
-
-i love   websites
+all models shown were made/styled by doctorlegacy
+website designed by @vitonkls

@@ -2,14 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Main Page -->
   <url>
     <loc>https://doctorlegacy.org/</loc>
-    <lastmod>2025-10-21</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     
-    <!-- Portfolio Images -->
     <image:image>
       <image:loc>https://doctorlegacy.org/assets/carousel/GradBear_Front.webp</image:loc>
       <image:title>Graduation Bear 3D Model</image:title>

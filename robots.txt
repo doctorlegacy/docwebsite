@@ -1,4 +1,4 @@
-# robots.txt for doctorlegacy portfolio
+# robots.txt for doctorlegacy
 # Allow all crawlers
 User-agent: *
 Allow: /

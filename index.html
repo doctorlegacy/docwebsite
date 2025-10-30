@@ -320,6 +320,24 @@
             
         }, 100);
 
+        
+        (function() {
+            const iconImgs = document.querySelectorAll('img[src^="assets/icons/"]');
+            iconImgs.forEach(img => {
+                img.setAttribute('draggable', 'false');
+                img.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                });
+            });
+            
+            document.addEventListener('contextmenu', function(e) {
+                const target = e.target;
+                if (target && target.tagName === 'IMG' && target.getAttribute('src')?.startsWith('assets/icons/')) {
+                    e.preventDefault();
+                }
+            }, true);
+        })();
+
         function toggleTheme() {
             const body = document.body;
             const themeIcon = document.querySelector('.theme-icon');
