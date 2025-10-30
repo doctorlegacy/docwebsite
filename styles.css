@@ -302,6 +302,10 @@ body.dark-mode header.scrolled .social-icons {
     color: #5865F2;
 }
 
+.social-icon:nth-child(1):hover img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(92%) saturate(2382%) hue-rotate(218deg) brightness(98%) contrast(95%);
+}
+
 .social-icon:nth-child(2):hover {
     color: #FF0000;
 }
@@ -312,6 +316,10 @@ body.dark-mode header.scrolled .social-icons {
 
 .social-icon:nth-child(3):hover {
     color: #FC4D50;
+}
+
+.social-icon:nth-child(3):hover img {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(81%) saturate(2424%) hue-rotate(328deg) brightness(102%) contrast(99%);
 }
 
 .carousel-container {

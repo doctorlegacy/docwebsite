@@ -318,33 +318,6 @@
             });
 
             
-            const socialIcons = document.querySelectorAll('.social-icon img');
-            
-            
-            if (socialIcons[0]) {
-                const discordLink = socialIcons[0].parentElement;
-                discordLink.onmouseenter = function() {
-                    socialIcons[0].src = 'assets/icons/discord-hover.svg';
-                    socialIcons[0].style.filter = 'none';
-                };
-                discordLink.onmouseleave = function() {
-                    socialIcons[0].src = 'assets/icons/discord.svg';
-                    socialIcons[0].style.filter = '';
-                };
-            }
-            
-            
-            if (socialIcons[2]) {
-                const boothLink = socialIcons[2].parentElement;
-                boothLink.onmouseenter = function() {
-                    socialIcons[2].src = 'assets/icons/booth-hover.svg';
-                    socialIcons[2].style.filter = 'none';
-                };
-                boothLink.onmouseleave = function() {
-                    socialIcons[2].src = 'assets/icons/booth.svg';
-                    socialIcons[2].style.filter = '';
-                };
-            }
         }, 100);
 
         function toggleTheme() {
