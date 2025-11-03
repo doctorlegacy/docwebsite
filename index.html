@@ -157,6 +157,10 @@
                 <button class="theme-toggle-button" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button">
                     <img class="theme-icon" src="assets/icons/light.svg" alt="" width="22" height="22">
                 </button>
+                <button class="button mobile-commission-btn" id="mobile-commission-btn" aria-label="Order your commission" type="button">
+                    <img src="assets/icons/close.svg" alt="" width="20" height="20" class="commission-icon">
+                    <span class="commission-text">Order your commission</span>
+                </button>
                 <button class="button show-models" aria-label="Navigate to timelapses section" type="button">
                     <img src="assets/icons/arrow.svg" alt="" width="16" height="16" class="arrow-icon">
                     Watch timelapses
@@ -194,6 +198,33 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-commission-overlay" id="mobile-commission-overlay">
+        <div class="mobile-commission-panel">
+            <div class="panel-body">
+                <p class="guarantee-text">
+                    <span class="guarantee-medium">Guarantee a high-quality model, </span><span class="guarantee-bold">every time.</span>
+                </p>
+                <div class="commission-image-container">
+                    <img src="assets/commissions.webp" alt="Example of commissioned 3D model work" class="commission-image" width="550" height="auto">
+                </div>
+                <p class="pricing-main">
+                    <span class="price-starting">Starting from</span>
+                    <span class="price-dollar">$</span>
+                    <span class="price-amount">50</span>
+                    <span class="price-currency">USD</span>
+                </p>
+                <p class="pricing-description">Final pricing varies depending on what you need.<br>A full model from scratch can range from <span class="pricing-semibold">$ 200 to $ 800+ USD</span>.</p>
+                <div class="cta-row">
+                    <p class="policy-text">NO NSFW   ·   PayPal only<br>Partial refunds  ·  50/50 payment</p>
+                    <button class="button cta-primary" id="mobile-contact-discord" type="button">
+                        <img src="assets/icons/discord.svg" alt="" width="23" height="23" style="filter: brightness(0);">
+                        Contact me on Discord
+                    </button>
                 </div>
             </div>
         </div>
@@ -476,6 +507,47 @@
             });
 
             contactBtn?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                window.open('https://discord.gg/vsnvrc', '_blank');
+            });
+        })();
+
+        (function() {
+            const mobileBtn = document.getElementById('mobile-commission-btn');
+            const mobileOverlay = document.getElementById('mobile-commission-overlay');
+            const mobileContactBtn = document.getElementById('mobile-contact-discord');
+
+            function toggleMobileCommission() {
+                const isActive = mobileBtn.classList.contains('active');
+                if (isActive) {
+                    mobileBtn.classList.remove('active');
+                    mobileOverlay.classList.remove('active');
+                } else {
+                    mobileBtn.classList.add('active');
+                    mobileOverlay.classList.add('active');
+                }
+            }
+
+            mobileBtn?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMobileCommission();
+            });
+
+            document.addEventListener('click', (e) => {
+                if (mobileOverlay?.classList.contains('active') && 
+                    !mobileOverlay.contains(e.target) && 
+                    !mobileBtn.contains(e.target)) {
+                    toggleMobileCommission();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileOverlay?.classList.contains('active')) {
+                    toggleMobileCommission();
+                }
+            });
+
+            mobileContactBtn?.addEventListener('click', (e) => {
                 e.stopPropagation();
                 window.open('https://discord.gg/vsnvrc', '_blank');
             });
