@@ -172,6 +172,10 @@
             <div class="spacer"></div>
         </div>
 
+        <div class="copyright-text" id="copyright-text">
+            doctorlegacy © 2025 &nbsp;&nbsp;·&nbsp;&nbsp; <a href="https://linktr.ee/vitonkls" target="_blank" rel="noopener noreferrer" class="copyright-link"><img src="assets/icons/vitonkls.svg" alt="vitonkls" class="vitonkls-logo"></a>
+        </div>
+
         <div class="commission-system">
             <div class="button commissions" id="commission-info-button" aria-expanded="false">
                 <span class="button-label">Order your commission</span>
@@ -268,6 +272,9 @@
         </div>
     </section>
 
+    <div class="mobile-copyright-footer">
+        <span>doctorlegacy © 2025 &nbsp;&nbsp;·&nbsp;&nbsp; <a href="https://linktr.ee/vitonkls" target="_blank" rel="noopener noreferrer" class="copyright-link"><img src="assets/icons/vitonkls.svg" alt="vitonkls" class="vitonkls-logo"></a></span>
+    </div>
     
     <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
         <button class="modal-close" onclick="closeVideoModal()" aria-label="Close video modal" type="button">
@@ -441,6 +448,33 @@
         
         handleScroll();
 
+        
+        const copyrightText = document.getElementById('copyright-text');
+        
+        function checkIfAtBottom() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            
+            const threshold = 15;
+            const isAtBottom = scrollTop + windowHeight >= documentHeight - threshold;
+            
+            if (copyrightText) {
+                if (isAtBottom) {
+                    copyrightText.classList.add('visible');
+                } else {
+                    copyrightText.classList.remove('visible');
+                }
+            }
+        }
+        
+        window.addEventListener('scroll', checkIfAtBottom);
+        window.addEventListener('resize', checkIfAtBottom);
+        
+        
+        checkIfAtBottom();
+
         (function() {
             const btn = document.getElementById('commission-info-button');
             const content = btn?.querySelector('.commission-content');
@@ -558,9 +592,15 @@
         let isShowingVideos = false;
         
         watchTimelapsesBtn?.addEventListener('click', () => {
+            const isMobile = window.innerWidth <= 480;
+            
             if (!isShowingVideos) {
+                const scrollTarget = isMobile 
+                    ? 600
+                    : document.documentElement.scrollHeight;
+                
                 window.scrollTo({
-                    top: document.documentElement.scrollHeight,
+                    top: scrollTarget,
                     behavior: 'smooth'
                 });
                 watchTimelapsesBtn.innerHTML = `
