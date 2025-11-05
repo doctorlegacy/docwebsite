@@ -1987,7 +1987,7 @@ body.dark-mode .cta-secondary {
     
     .model-name-container {
         align-items: flex-start;
-        top: -7vh;
+        top: -6vh;
     }
     
     .model-name-text {
@@ -2225,7 +2225,23 @@ body.dark-mode .cta-secondary {
     }
     
     .carousel-container {
+        height: 100vh;
+        height: 100svh; /* small viewport height (excludes browser UI) */
         min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    @supports (-webkit-touch-callout: none) {
+        .carousel-container {
+            height: -webkit-fill-available;
+            min-height: -webkit-fill-available;
+        }
     }
     
     .carousel img {
@@ -2236,18 +2252,13 @@ body.dark-mode .cta-secondary {
     .carousel {
         width: calc(56vw * 36);
         transform: translateX(-5vw);
-        padding: 20px 0;
-        margin-top: -336px;
+        padding: 0;
+        margin-top: 0;
     }
     
     @keyframes scroll {
         0% { transform: translateX(-5vw); }
         100% { transform: translateX(calc(-5vw - (56vw * 12))); }
-    }
-    
-    .carousel-container {
-        padding-top: 100px;
-        margin-bottom: -200px;
     }
     
     .video-section {
