@@ -1233,7 +1233,7 @@ body.dark-mode .copyright-text {
     font-weight: 600;
     color: #a3a3a3;
     padding: 20px 0px 20px 20px;
-    margin: 0 -0px 100px -10px;
+    margin: 0 -0px 100px -16px;
     text-align: center;
 }
 
@@ -1662,7 +1662,7 @@ body.dark-mode .cta-secondary {
     
     .copyright-text {
         font-size: 11px;
-        right: 204px;
+        right: 20px;
     }
     
     .vitonkls-logo {
@@ -1989,7 +1989,7 @@ body.dark-mode .cta-secondary {
     }
     
     .vitonkls-logo {
-        height: 10px;
+        height: 12px;
     }
     
     .buttons-container {
@@ -2084,7 +2084,7 @@ body.dark-mode .cta-secondary {
     .mobile-commission-overlay {
         display: block;
         position: fixed;
-        bottom: 92px;
+        bottom: 90px;
         left: 20px;
         right: 20px;
         z-index: 999;
