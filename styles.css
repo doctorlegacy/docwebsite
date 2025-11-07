@@ -116,14 +116,14 @@ header.scrolled .profile-container {
     object-fit: contain;
     border: none;
     background: transparent;
-    transition: transform 0.15s ease, width 0.35s cubic-bezier(0.22, 1, 0.36, 1), height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.15s ease, width 0.35s cubic-bezier(0.22, 1, 0.36, 1), height 0.35s cubic-bezier(0.22, 1, 0.36, 1), filter 0.25s ease-in;
     cursor: pointer;
     position: relative;
     z-index: 3;
 }
 
 .profile-pic:not(.noeye-mode) {
-    transition: transform 0.15s ease, width 0.35s cubic-bezier(0.22, 1, 0.36, 1), height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.15s ease, width 0.35s cubic-bezier(0.22, 1, 0.36, 1), height 0.35s cubic-bezier(0.22, 1, 0.36, 1), filter 0.25s ease-in;
 }
 
 .profile-pic {
@@ -195,7 +195,7 @@ header.scrolled .text-content {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
-    transition: font-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: font-size 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.25s ease-in;
 }
 
 .text-content h2 {
@@ -370,7 +370,14 @@ body.dark-mode header.scrolled .social-icons {
     transition: box-shadow 0.3s ease, border-radius 0.3s ease;
 }
 
-.carousel img:hover {
+@media (hover: hover) and (pointer: fine) {
+    .carousel img:hover {
+        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+        border-radius: 50px;
+    }
+}
+
+.carousel img.touch-active {
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
 }
@@ -581,14 +588,7 @@ body.dark-mode header.scrolled .social-icons {
 }
 
 body.dark-mode .commissions.expanded {
-    background: linear-gradient(
-        135deg, 
-        rgba(178, 34, 34, 0.95) 0%, 
-        rgba(197, 45, 57, 0.95) 50%,
-        rgba(214, 52, 71, 0.95) 100%
-    );
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #d53446;
     color: #FFFFFF;
     box-shadow: 
         0 12px 40px rgba(0,0,0,0.5), 
@@ -697,7 +697,13 @@ body.dark-mode .model-name-text {
     background-color: rgba(26, 26, 26, 0.98);
 }
 
-body.dark-mode .carousel img:hover {
+@media (hover: hover) and (pointer: fine) {
+    body.dark-mode .carousel img:hover {
+        box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+    }
+}
+
+body.dark-mode .carousel img.touch-active {
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
 } 
 
@@ -1713,8 +1719,11 @@ body.dark-mode .cta-secondary {
         border-radius: 8px;
     }
     
-    .carousel img:hover {
-        border-radius: 40px;
+    
+    @media (hover: hover) and (pointer: fine) {
+        .carousel img:hover {
+            border-radius: 40px;
+        }
     }
     
     .carousel {
@@ -1842,7 +1851,9 @@ body.dark-mode .cta-secondary {
     
     body,
     header,
-    .buttons-wrapper {
+    .buttons-wrapper,
+    .profile-pic,
+    .text-content h1 {
         transition: none !important;
     }
     
@@ -1992,6 +2003,7 @@ body.dark-mode .cta-secondary {
     
     .model-name-text {
         font-size: 14px;
+        transition: opacity 0.25s ease-in, color 0s, background-color 0s;
     }
 
     .left-buttons {
@@ -2072,7 +2084,7 @@ body.dark-mode .cta-secondary {
     .mobile-commission-overlay {
         display: block;
         position: fixed;
-        bottom: 100px;
+        bottom: 92px;
         left: 20px;
         right: 20px;
         z-index: 999;
@@ -2096,12 +2108,7 @@ body.dark-mode .cta-secondary {
     }
     
     body.dark-mode .mobile-commission-panel {
-        background: linear-gradient(
-            135deg, 
-            rgba(178, 34, 34, 0.98) 0%, 
-            rgba(197, 45, 57, 0.98) 50%,
-            rgba(214, 52, 71, 0.98) 100%
-        );
+        background: #d53446;
     }
     
     .mobile-commission-overlay .guarantee-text {

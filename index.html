@@ -340,6 +340,7 @@
             const carousel = document.querySelector('.carousel');
             const images = carousel.querySelectorAll('img');
             const modelNameText = document.querySelector('.model-name-text');
+            let activeTouchImage = null;
 
             
             images.forEach(img => {
@@ -357,6 +358,38 @@
                     img.src = img.src.replace('_Front', '_Side');
                     
                     modelNameText.style.opacity = '0';
+                });
+
+                
+                img.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    
+                    
+                    if (activeTouchImage === img) {
+                        img.src = img.src.replace('_Front', '_Side');
+                        img.classList.remove('touch-active');
+                        modelNameText.style.opacity = '0';
+                        activeTouchImage = null;
+                        carousel.style.animationPlayState = 'running';
+                        return;
+                    }
+                    
+                    
+                    if (activeTouchImage) {
+                        activeTouchImage.src = activeTouchImage.src.replace('_Front', '_Side');
+                        activeTouchImage.classList.remove('touch-active');
+                    }
+                    
+                    
+                    carousel.style.animationPlayState = 'paused';
+                    img.src = img.src.replace('_Side', '_Front');
+                    img.classList.add('touch-active');
+                    
+                    const modelName = img.getAttribute('data-model-name') || img.alt.replace(' Side', '').replace(' Front', '');
+                    modelNameText.textContent = modelName;
+                    modelNameText.style.opacity = '1';
+                    
+                    activeTouchImage = img;
                 });
             });
 
@@ -480,6 +513,7 @@
             const content = btn?.querySelector('.commission-content');
             const contactBtn = document.getElementById('contact-discord');
             const carousel = document.querySelector('.carousel');
+            const themeToggleBtn = document.querySelector('.theme-toggle-button');
             let isHovered = false;
 
             // Track hover state
@@ -531,7 +565,9 @@
             });
 
             document.addEventListener('click', (e) => {
-                if (!btn?.contains(e.target) && btn?.classList.contains('expanded')) {
+                if (!btn?.contains(e.target) && 
+                    btn?.classList.contains('expanded') &&
+                    !themeToggleBtn?.contains(e.target)) {
                     close();
                 }
             });
@@ -550,6 +586,7 @@
             const mobileBtn = document.getElementById('mobile-commission-btn');
             const mobileOverlay = document.getElementById('mobile-commission-overlay');
             const mobileContactBtn = document.getElementById('mobile-contact-discord');
+            const themeToggleBtn = document.querySelector('.theme-toggle-button');
 
             function toggleMobileCommission() {
                 const isActive = mobileBtn.classList.contains('active');
@@ -570,7 +607,8 @@
             document.addEventListener('click', (e) => {
                 if (mobileOverlay?.classList.contains('active') && 
                     !mobileOverlay.contains(e.target) && 
-                    !mobileBtn.contains(e.target)) {
+                    !mobileBtn.contains(e.target) &&
+                    !themeToggleBtn?.contains(e.target)) {
                     toggleMobileCommission();
                 }
             });
@@ -921,4 +959,5 @@
         });
     </script>
 </body>
+</html>
 </html>
