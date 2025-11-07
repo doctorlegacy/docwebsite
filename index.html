@@ -249,6 +249,7 @@
                 
                 <article class="video-item active" data-video-index="1" data-video-id="iY1Wuf4oY1M" role="listitem">
                     <div class="video-thumbnail">
+                        <span class="new-video-tag">NEW!</span>
                         <img src="assets/thumbnails/thumbnail_ibuki.webp" alt="" width="560" height="315">
                         <div class="video-overlay">
                             <img src="assets/icons/youtube.svg" alt="Play video" class="play-button">
@@ -516,7 +517,7 @@
             const themeToggleBtn = document.querySelector('.theme-toggle-button');
             let isHovered = false;
 
-            // Track hover state
+            
             if (carousel) {
                 carousel.addEventListener('mouseenter', () => {
                     isHovered = true;
@@ -633,9 +634,19 @@
             const isMobile = window.innerWidth <= 480;
             
             if (!isShowingVideos) {
-                const scrollTarget = isMobile 
-                    ? 600
-                    : document.documentElement.scrollHeight;
+                let scrollTarget;
+                
+                if (isMobile) {
+                    const videoSection = document.getElementById('video-section');
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const videoSectionTop = videoSection.offsetTop;
+                    const desiredPadding = -10;
+                    
+                    scrollTarget = videoSectionTop - headerHeight - desiredPadding;
+                } else {
+                    scrollTarget = document.documentElement.scrollHeight;
+                }
                 
                 window.scrollTo({
                     top: scrollTarget,
@@ -957,6 +968,28 @@
         window.addEventListener('resize', () => {
             updateCarouselPosition(false);
         });
+
+        
+        const observerOptions = {
+            root: null,
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const newTag = entry.target.querySelector('.new-video-tag');
+                    if (newTag && !newTag.classList.contains('show')) {
+                        newTag.classList.add('show');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        const ibukiVideo = document.querySelector('[data-video-id="iY1Wuf4oY1M"]');
+        if (ibukiVideo) {
+            observer.observe(ibukiVideo);
+        }
     </script>
 </body>
 </html>
