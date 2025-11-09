@@ -898,58 +898,6 @@ body.dark-mode .description-text {
     box-sizing: border-box;
 }
 
-@keyframes newTagAppear {
-    0% {
-        opacity: 0;
-        transform: translateX(8px);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes newTagPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-.new-video-tag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(255, 238, 53, 0.98);
-    color: #000000;
-    font-family: 'Instrument Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    font-style: italic;
-    letter-spacing: 0.02em;
-    padding: 20px 20px;
-    border-radius: 100px;
-    z-index: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    pointer-events: none;
-    opacity: 0;
-    transform: scale(0.3);
-}
-
-.new-video-tag.show {
-    animation: newTagAppear 0.2s ease-out 1s forwards,
-               newTagPulse 6s ease-in-out 1.3s infinite;
-}
-
 .video-overlay {
     position: absolute;
     top: 0;
@@ -2378,12 +2326,5 @@ body.dark-mode .cta-secondary {
         transform: none;
         margin-top: 15px;
         display: none;
-    }
-    
-    .new-video-tag {
-        font-size: 16px;
-        padding: 16px 16px;
-        top: 8px;
-        left: 8px;
     }
 }

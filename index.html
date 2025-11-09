@@ -249,7 +249,6 @@
                 
                 <article class="video-item active" data-video-index="1" data-video-id="iY1Wuf4oY1M" role="listitem">
                     <div class="video-thumbnail">
-                        <span class="new-video-tag">NEW!</span>
                         <img src="assets/thumbnails/thumbnail_ibuki.webp" alt="" width="560" height="315">
                         <div class="video-overlay">
                             <img src="assets/icons/youtube.svg" alt="Play video" class="play-button">
@@ -968,28 +967,6 @@
         window.addEventListener('resize', () => {
             updateCarouselPosition(false);
         });
-
-        
-        const observerOptions = {
-            root: null,
-            threshold: 0.3
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const newTag = entry.target.querySelector('.new-video-tag');
-                    if (newTag && !newTag.classList.contains('show')) {
-                        newTag.classList.add('show');
-                    }
-                }
-            });
-        }, observerOptions);
-
-        const ibukiVideo = document.querySelector('[data-video-id="iY1Wuf4oY1M"]');
-        if (ibukiVideo) {
-            observer.observe(ibukiVideo);
-        }
     </script>
 </body>
 </html>
