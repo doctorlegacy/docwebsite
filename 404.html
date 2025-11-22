@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F6F6F6">
+    <title>404 · doctorlegacy</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=1730678400" type="image/x-icon">
+    <link rel="icon" href="/assets/favicons/favicon.ico?v=1730678400" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=1730678400">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=1730678400">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=1730678400">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #F6F6F6;
+            font-family: 'Instrument Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .error-code {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 180px;
+            font-weight: 700;
+            color: #000000;
+            letter-spacing: -0.02em;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .eye-icon {
+            width: 198px;
+            height: 198px;
+            object-fit: contain;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+
+        .home-button {
+            background: transparent;
+            color: #000000;
+            font-family: 'Instrument Sans', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: -0.02em;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+                gap: 0px;
+            }
+
+            .eye-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .home-button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 60px;
+                gap: 0px;
+            }
+
+            .eye-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .home-button {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">
+            <span>4</span>
+            <img src="assets/icons/WITHEYE.svg" alt="" class="eye-icon">
+            <span>4</span>
+        </div>
+        <a href="https://doctorlegacy.org/" class="home-button">Go to Home</a>
+    </div>
+</body>
+</html>
+
