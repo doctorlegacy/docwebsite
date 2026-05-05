@@ -346,13 +346,13 @@ body.dark-mode header.scrolled .social-icons {
     color: #9D9D9D;
 }
 
-.social-icon:nth-child(4):hover,
-.social-icon:nth-child(4):active {
+.social-icon.social-icon-vgen:hover,
+.social-icon.social-icon-vgen:active {
     color: #99DE0D;
 }
 
-.social-icon:nth-child(4):hover .vgen-icon,
-.social-icon:nth-child(4):active .vgen-icon {
+.social-icon.social-icon-vgen:hover .vgen-icon,
+.social-icon.social-icon-vgen:active .vgen-icon {
     color: #99DE0D;
 }
 
