@@ -255,7 +255,16 @@
                     </div>
                 </article>
                 
-                <article class="video-item active" data-video-index="1" data-video-id="iY1Wuf4oY1M" role="listitem">
+                <article class="video-item active" data-video-index="1" data-video-id="qXSEwIUk4kY" role="listitem">
+                    <div class="video-thumbnail">
+                        <img src="assets/thumbnails/thumbnail_reze.webp" alt="" width="560" height="315">
+                        <div class="video-overlay">
+                            <img src="assets/icons/youtube.svg" alt="Play video" class="play-button">
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="video-item" data-video-index="2" data-video-id="iY1Wuf4oY1M" role="listitem">
                     <div class="video-thumbnail">
                         <img src="assets/thumbnails/thumbnail_ibuki.webp" alt="" width="560" height="315">
                         <div class="video-overlay">
@@ -264,7 +273,7 @@
                     </div>
                 </article>
                 
-                <article class="video-item" data-video-index="2" data-video-id="FQqR0hIktB0" role="listitem">
+                <article class="video-item" data-video-index="3" data-video-id="FQqR0hIktB0" role="listitem">
                     <div class="video-thumbnail">
                         <img src="assets/thumbnails/thumbnail_kokomi.webp" alt="" width="560" height="315">
                         <div class="video-overlay">
@@ -275,7 +284,7 @@
             </div>
             
             <div class="featuring-section-fixed" id="featuringSection">
-                <span class="featuring-text">Commentated timelapse featuring <img src="assets/feat-3.webp" alt="" class="featuring" id="featuringImg" width="20" height="20"> <span id="featuringText">Ibuki</span></span>
+                <span class="featuring-text">Commentated timelapse featuring <img src="assets/feat-4.webp" alt="" class="featuring" id="featuringImg" width="20" height="20"> <span id="featuringText">Reze</span></span>
             </div>
         </div>
     </section>
@@ -318,7 +327,8 @@
         const preloadFeatImages = [
             'assets/feat-1.webp',
             'assets/feat-2.webp',
-            'assets/feat-3.webp'
+            'assets/feat-3.webp',
+            'assets/feat-4.webp'
         ];
         
         preloadFeatImages.forEach(src => {
@@ -782,6 +792,12 @@
                 description: 'Modeled, textured, rigged, and rendered from scratch in Blender.'
             },
             {
+                id: 'qXSEwIUk4kY',
+                featImg: 'assets/feat-4.webp',
+                featText: 'Reze',
+                description: 'Modeled, textured, rigged, and rendered in Blender.'
+            },
+            {
                 id: 'iY1Wuf4oY1M',
                 featImg: 'assets/feat-3.webp',
                 featText: 'Ibuki',
@@ -857,7 +873,7 @@
         let carouselCurrentIndex = 1;
         const carousel = document.getElementById('videoCarousel');
         const videoItems = document.querySelectorAll('.video-item');
-        const totalVideos = 3;
+        const totalVideos = 4;
         let isTransitioning = false;
 
         function initCarousel() {
